@@ -1,7 +1,9 @@
 package com.example.practice.web;
 
 import com.example.practice.domain.entity.User;
+import com.example.practice.domain.entity.UserV01;
 import com.example.practice.domain.service.UserService;
+import com.example.practice.repository.mapper.UserConvertBasic;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,5 +39,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id){
         userService.deleteUser(id);
+    }
+
+    @GetMapping("/V01/{id}")
+    public UserV01 getUserV01(@PathVariable Long id){
+        final User user = userService.getUser(id);
+        return UserConvertBasic.INSTANCE.toUserV01(user);
     }
 }
