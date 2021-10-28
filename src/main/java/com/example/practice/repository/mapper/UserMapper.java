@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
 
@@ -22,4 +24,7 @@ public interface UserMapper {
 
     @Delete("delete from practice_20211026.users where id = #{id}")
     void deleteUser(@Param("id") Long id);
+
+    @Select("select * from practice_20211026.users where age < #{age}")
+    List<User> getUserUnder(@Param("age") Long age);
 }

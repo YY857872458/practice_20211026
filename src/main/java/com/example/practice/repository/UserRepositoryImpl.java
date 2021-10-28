@@ -5,6 +5,8 @@ import com.example.practice.repository.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository{
@@ -29,5 +31,10 @@ public class UserRepositoryImpl implements UserRepository{
     @Override
     public void deleteUser(Long id) {
         userMapper.deleteUser(id);
+    }
+
+    @Override
+    public List<User> findUserUnder(Long age) {
+        return userMapper.getUserUnder(age);
     }
 }
