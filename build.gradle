@@ -22,7 +22,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+    testImplementation 'org.assertj:assertj-db:2.0.2'
+    testImplementation 'org.assertj:assertj-core:3.0.0'
 }
 
 test {

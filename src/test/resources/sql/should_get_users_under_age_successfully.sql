@@ -1,0 +1,1 @@
+INSERT INTO practice_20211026.users (`id`,`name`,`age`,`isMale`) values (999,"test_age",999,true);

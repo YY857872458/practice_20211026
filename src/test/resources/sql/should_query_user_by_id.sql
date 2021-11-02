@@ -1,0 +1,1 @@
+INSERT INTO practice_20211026.users (`id`,`name`,`age`,`isMale`) values (999,"query_name",999,true);

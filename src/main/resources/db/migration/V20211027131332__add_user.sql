@@ -1,2 +1,2 @@
-INSERT INTO `users` (`name`,`age`,`isMale`)
-VALUES ("小明",18,true)
+INSERT INTO `users` (`id`, `name`,`age`,`isMale`)
+VALUES (1,"小明",18,true)

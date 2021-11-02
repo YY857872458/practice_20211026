@@ -16,7 +16,7 @@ public interface UserMapper {
     @Select("select * from practice_20211026.users where id = #{id}")
     User findUserById(@Param("id") Long id);
 
-    @Insert("insert into practice_20211026.users (name,age,isMale) values (#{name},#{age},#{isMale})")
+    @Insert("insert into practice_20211026.users (id,name,age,isMale) values (#{id},#{name},#{age},#{isMale})")
     void insertUser(User user);
 
     @Update("update practice_20211026.users set name = #{name}, age = #{age}, isMale = #{isMale} where id = #{id}")
