@@ -1,5 +1,6 @@
-package com.example.practice;
+package com.example.practice.MapperTest;
 
+import com.example.practice.PersistenceTests;
 import com.example.practice.domain.entity.User;
 import com.example.practice.repository.mapper.UserMapper;
 import org.assertj.core.api.Assertions;
@@ -13,7 +14,7 @@ import java.util.List;
 
 import static org.assertj.db.api.Assertions.assertThat;
 
-public class MapperTests extends PersistenceTests{
+public class MapperTests extends PersistenceTests {
     @Autowired
     private UserMapper userMapper;
 
@@ -36,7 +37,6 @@ public class MapperTests extends PersistenceTests{
     void should_insert_user_successfully(){
         User newUser = User.builder().id(999L).name("yy").age(10L).isMale(true).build();
         userMapper.insertUser(newUser);
-
         Request sql = new Request(getDataSource(), "select * from users where id=999");
 
         assertThat(sql).hasNumberOfRows(1)
